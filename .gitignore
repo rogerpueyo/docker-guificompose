@@ -1,0 +1,5 @@
+# Created volumes by docker-compose
+drupal6/guifi-web/
+drupal6+guifimaps/guifi-web/
+drupal7/guifi-web/
+drupal8/guifi-web/
