@@ -25,6 +25,8 @@ services:
       MYSQL_DATABASE: guifidev
       MYSQL_USER: guifi
       MYSQL_PASSWORD: guifi
+    volumes:
+      - ./database:/var/lib/mysql
 
   myadmin:
     image: "phpmyadmin/phpmyadmin"
