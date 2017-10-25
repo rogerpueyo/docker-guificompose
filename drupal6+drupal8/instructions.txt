@@ -1,0 +1,11 @@
+# Drupal 8 migrate packages
+cd /usr/share/drupal/guifi-web/
+drush dl migrate_upgrade migrate_plus migrate_tools migrate_manifest
+drush en -y migrate_upgrade migrate_plus migrate_tools
+# drush migrate
+drush migrate-upgrade --legacy-db-url=mysql://guifi:guifi@databased6/guifidev --legacy-root=http://guifi-drupal6 --configure-only
+drush migrate-status 
+drush migrate-import --all
+
+# https://www.drupal.org/docs/8/upgrade/upgrade-using-drush
+# Interessant!

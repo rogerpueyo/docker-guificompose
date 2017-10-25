@@ -1,0 +1,71 @@
+version: "3"
+services:
+  guifi-drupal8:
+    image: guifi/drupal-guifi:drupal8
+    environment:
+      GUIFI_DB: guifidev
+      DRUPAL_ADMIN: admin
+      DRUPAL_ADMIN_PWD: drupal
+      GUIFI_USER_DB: guifi
+      GUIFI_USER_DB_PWD: guifi
+      XDEBUG_PORT: 9000
+    links:
+      - databased8:database
+      - databased6
+      - guifi-drupal6
+    volumes:
+      - ./guifi-webd8:/usr/share/drupal/guifi-web/
+    ports:
+      - 8080:80
+    depends_on:
+      - databased8
+      - databased6
+
+  guifi-drupal6:
+    image: guifi/drupal-guifi:drupal6
+    environment:
+      GUIFI_DB: guifidev
+      DRUPAL_ADMIN: admin
+      DRUPAL_ADMIN_PWD: drupal
+      GUIFI_USER_DB: guifi
+      GUIFI_USER_DB_PWD: guifi
+      XDEBUG_PORT: 9000
+    links:
+      - databased6:database
+    volumes:
+      - ./guifi-webd6:/usr/share/drupal/guifi-web/
+    ports:
+      - 8081:80
+    depends_on:
+      - databased6
+
+  databased8:
+    image: "mariadb"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: guifidev
+      MYSQL_USER: guifi
+      MYSQL_PASSWORD: guifi
+      MYSQL_WAIT_TIMEOUT: 1000
+    volumes:
+      - ./databased8:/var/lib/mysql
+
+  databased6:
+    image: "mariadb"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: guifidev
+      MYSQL_USER: guifi
+      MYSQL_PASSWORD: guifi
+      MYSQL_WAIT_TIMEOUT: 1000
+    volumes:
+      - ./databased6:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  myadmin:
+    image: "phpmyadmin/phpmyadmin"
+    links:
+      - databased8:db
+    ports:
+      - 8000:80

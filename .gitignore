@@ -1,4 +1,11 @@
 # Created volumes by docker-compose
-**/guifi-web
 
+# Drupals
+**/guifi-web
 **/database
+
+# Drupal6 + Drupal8
+**/guifi-webd6
+**/databased6
+**/guifi-webd8
+**/databased8
