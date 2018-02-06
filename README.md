@@ -1,7 +1,7 @@
-# Docker compositions for the guifi.net services
+# Docker compositions for the ***guifi·net*** web services and applications
 
 ## Drupal webpage
-This repository provides a series of Docker images with Drupal and the [drupal-guifi](https://github.com/guifi/drupal-guifi) module, for developing the guifi.net website.
+This repository provides a series of Docker images with Drupal and the [drupal-guifi](https://github.com/guifi/drupal-guifi) module, for developing the ***guifi·net*** website.
 
 ### Requirements
 
@@ -37,7 +37,7 @@ You are now ready to use this repo's Docker Compose files.
 At this moment we are providing different Docker images which will be useful for different cases. All the images provided support the [Xdebug PHP Debugger](https://xdebug.org/), which is compatible with a lot of IDEs.
 
 #### Drupal 6
-If you want to work with the current version of the guifi.net webpage, clone this repository inside your development directory with writing permissions:
+If you want to work with the current version of the ***guifi·net*** webpage, clone this repository inside your development directory with writing permissions:
 
 ```
 git clone https://github.com/guifi/docker-guificompose.git
@@ -50,15 +50,15 @@ cd docker-drupal-guifi/drupal6
 docker-compose up
 ```
 
-The docker-compose command automates the download and installation of the guifi.net website development environment. You can check the output messages that log the different steps performed. The installation will be finished once you see:
+The docker-compose command automates the download and installation of the ***guifi·net*** website development environment. You can check the output messages that log the different steps performed. The installation will be finished once you see:
 
 ```
 Guifi.net dev page successfully installed in Docker image!
 ```
 
 After that you can head to:
-- guifi.net website: http://localhost:8080 with `user: webmestre` and `password: guifi`
-- phpmyadmin (database visualization): http://localhost:8000 with `user: root` and `password: admin`
+- Guifi.net website: http://localhost:8080 with `user: webmestre` and `password: guifi`
+- phpMyAdmin (database visualization): http://localhost:8000 with `user: root` and `password: admin`
 
 User `webmestre` has the Drupal user ID #1. It is mandatory to employ this user to test migrations to newer Drupal versions.
 
