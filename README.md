@@ -40,7 +40,7 @@ At this moment we are providing different Docker images which will be useful for
 If you want to work with the current version of the guifi.net webpage, clone this repository inside your development directory with writing permissions:
 
 ```
-git clone https://github.com/guifi/docker-drupal-guifi
+git clone https://github.com/guifi/docker-guificompose.git
 ```
 
 Then enter the directory where the [docker-compose.yml](./drupal6/docker-compose.yml) file is and issue the command to build the development environment:
@@ -64,7 +64,7 @@ User `webmestre` has the Drupal user ID #1. It is mandatory to employ this user 
 
 In this development environment, all Drupal users registered at www.guifi.net are available locally and have the same password: `guifi`
 
-If you want to erase all the development website's content and create a new one, run the following commands from within the `docker-drupal-guifi/drupal6` directory:
+If you want to erase all the development website's content and create a new one, run the following commands from within the `docker-guificompose/drupal6` directory:
 
 ```
 docker-compose rm -vf
